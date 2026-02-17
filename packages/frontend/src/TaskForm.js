@@ -7,6 +7,7 @@ function TaskForm({ onSave, initialTask }) {
   const [title, setTitle] = useState(initialTask?.title || '');
   const [description, setDescription] = useState(initialTask?.description || '');
   const [dueDate, setDueDate] = useState(initialTask?.due_date || '');
+  const [priority, setPriority] = useState(initialTask?.priority || 'P3');
   const [error, setError] = useState(null);
 
   // Helper to normalize date string to YYYY-MM-DD format
@@ -30,10 +31,12 @@ function TaskForm({ onSave, initialTask }) {
       setTitle(initialTask.title || '');
       setDescription(initialTask.description || '');
       setDueDate(normalizeDateString(initialTask.due_date));
+      setPriority(initialTask.priority || 'P3');
     } else {
       setTitle('');
       setDescription('');
       setDueDate('');
+      setPriority('P3');
     }
   }, [initialTask]);
 
@@ -44,10 +47,11 @@ function TaskForm({ onSave, initialTask }) {
       return;
     }
     setError(null);
-    await onSave({ title, description, due_date: dueDate });
+    await onSave({ title, description, due_date: dueDate, priority });
     setTitle('');
     setDescription('');
     setDueDate('');
+    setPriority('P3');
   };
 
   return (
@@ -143,6 +147,53 @@ function TaskForm({ onSave, initialTask }) {
             }
           }}
         />
+        <Box>
+          <Typography 
+            variant="subtitle2" 
+            sx={{ 
+              mb: 1, 
+              color: '#616161',
+              fontWeight: 500
+            }}
+          >
+            Priority
+          </Typography>
+          <Box display="flex" gap={1}>
+            {['P1', 'P2', 'P3'].map((p) => (
+              <Button
+                key={p}
+                variant={priority === p ? 'contained' : 'outlined'}
+                onClick={() => setPriority(p)}
+                data-testid={`priority-${p}`}
+                sx={{
+                  minWidth: '60px',
+                  borderRadius: 2,
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  ...(priority === p ? {
+                    backgroundColor: '#07F3E6',
+                    color: '#000',
+                    borderColor: '#07F3E6',
+                    '&:hover': {
+                      backgroundColor: '#06d9cf',
+                      borderColor: '#06d9cf',
+                    }
+                  } : {
+                    backgroundColor: '#7A7A7A',
+                    color: '#fff',
+                    borderColor: '#7A7A7A',
+                    '&:hover': {
+                      backgroundColor: '#666',
+                      borderColor: '#666',
+                    }
+                  })
+                }}
+              >
+                {p}
+              </Button>
+            ))}
+          </Box>
+        </Box>
         {error && <Typography color="error" sx={{ fontWeight: 500, fontSize: '0.875rem' }}>{error}</Typography>}
         <Box display="flex" gap={2}>
           <Button 
