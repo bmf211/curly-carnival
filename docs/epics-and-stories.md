@@ -8,7 +8,7 @@ This document breaks down [docs/prd-todo.md](docs/prd-todo.md) into epics and st
 Codebase context (to inform Technical Requirements):
 - Frontend currently performs CRUD via `fetch('/api/tasks...')` (see `packages/frontend/src/App.js` and `packages/frontend/src/TaskList.js`).
 - Frontend dev server proxies `/api/*` to `http://localhost:3030` (see `packages/frontend/package.json`).
-- Backend exposes `/api/tasks` endpoints and stores tasks in an in-memory SQLite database with snake_case fields like `due_date` (see `packages/backend/src/app.js`).
+- Backend exposes `/api/tasks` endpoints and stores tasks in an in-memory SQLite database with snake_case fields like `due_date` (see `packages/backend/src/app.js` for details).
 
 ## MVP
 
