@@ -20,7 +20,7 @@
 
 ### Priority Selector Colors
 
-- Selected priority: #07F3E6 (blue)
+- Selected priority: #07F2E6 (blue)
 - Unselected priority: #7A7A7A (gray)
 
 ## Button Styles

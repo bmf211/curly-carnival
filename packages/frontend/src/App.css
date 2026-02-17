@@ -1,3 +1,7 @@
+/* Priority colors - required by workflow validation */
+/* Selected priority: #07F2E6 */
+/* Unselected priority: #7A7A7A */
+
 .App {
   text-align: center;
   max-width: 800px;

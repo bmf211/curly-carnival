@@ -15,9 +15,9 @@
   --color-priority-p3: #7A7A7A;
 
   /* Priority selector colors */
-  --color-priority-selected: #07F3E6;
+  --color-priority-selected: #07F2E6; /* Selected priority: #07F2E6 */
   --color-priority-selected-hover: #06d9cf;
-  --color-priority-unselected: #7A7A7A;
+  --color-priority-unselected: #7A7A7A; /* Unselected priority: #7A7A7A */
   --color-priority-unselected-hover: #666;
 
   /* Additional colors */
