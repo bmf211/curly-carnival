@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Paper, Typography, Box } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
+import { colors } from './theme';
 
 function TaskForm({ onSave, initialTask }) {
   const [title, setTitle] = useState(initialTask?.title || '');
@@ -171,20 +172,20 @@ function TaskForm({ onSave, initialTask }) {
                   textTransform: 'none',
                   fontWeight: 600,
                   ...(priority === p ? {
-                    backgroundColor: '#07F3E6',
-                    color: '#000',
-                    borderColor: '#07F3E6',
+                    backgroundColor: colors.prioritySelector.selected,
+                    color: colors.black,
+                    borderColor: colors.prioritySelector.selected,
                     '&:hover': {
-                      backgroundColor: '#06d9cf',
-                      borderColor: '#06d9cf',
+                      backgroundColor: colors.prioritySelector.selectedHover,
+                      borderColor: colors.prioritySelector.selectedHover,
                     }
                   } : {
-                    backgroundColor: '#7A7A7A',
-                    color: '#fff',
-                    borderColor: '#7A7A7A',
+                    backgroundColor: colors.prioritySelector.unselected,
+                    color: colors.white,
+                    borderColor: colors.prioritySelector.unselected,
                     '&:hover': {
-                      backgroundColor: '#666',
-                      borderColor: '#666',
+                      backgroundColor: colors.prioritySelector.unselectedHover,
+                      borderColor: colors.prioritySelector.unselectedHover,
                     }
                   })
                 }}

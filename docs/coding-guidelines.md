@@ -31,6 +31,14 @@
 - Add comments to explain complex logic, but avoid obvious comments.
 - Write tests for all new features and bug fixes.
 
+## CSS and Styling
+
+- Define all color values in a centralized theme or constants file.
+- Never hardcode colors directly in component files.
+- Use CSS variables or theme constants for consistency and maintainability.
+- When using Material UI, prefer theme-based styling over inline `sx` props with hardcoded values.
+- Keep styling concerns separate from component logic where possible.
+
 ## Code Reviews
 
 - Submit pull requests for all changes.

@@ -12,6 +12,17 @@
 - Text: #212121 (dark gray/black)
 - Completed tasks: #9e9e9e (gray, with strikethrough)
 
+### Priority Colors
+
+- Priority P1: #f44336 (red)
+- Priority P2: #ff9800 (orange)
+- Priority P3: #7A7A7A (gray)
+
+### Priority Selector Colors
+
+- Selected priority: #07F3E6 (blue)
+- Unselected priority: #7A7A7A (gray)
+
 ## Button Styles
 
 - Use contained buttons for primary actions (e.g., Add Task, Save)

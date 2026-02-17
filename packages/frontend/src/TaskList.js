@@ -5,6 +5,7 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import EventIcon from '@mui/icons-material/Event';
+import { colors } from './theme';
 
 function TaskList({ onEdit }) {
   const [tasks, setTasks] = useState([]);
@@ -211,8 +212,8 @@ function TaskList({ onEdit }) {
                     height: 20,
                     fontSize: '0.7rem',
                     fontWeight: 600,
-                    backgroundColor: task.priority === 'P1' ? '#f44336' : task.priority === 'P2' ? '#ff9800' : '#7A7A7A',
-                    color: 'white',
+                    backgroundColor: colors.priority[task.priority] || colors.priority.P3,
+                    color: colors.white,
                   }}
                 />
               )}
