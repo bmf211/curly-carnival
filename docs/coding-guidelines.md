@@ -33,11 +33,12 @@
 
 ## CSS and Styling
 
-- Define all color values in a centralized theme or constants file.
+- Define all color values as CSS custom properties (CSS variables) in `index.css`.
 - Never hardcode colors directly in component files.
-- Use CSS variables or theme constants for consistency and maintainability.
-- When using Material UI, prefer theme-based styling over inline `sx` props with hardcoded values.
+- Reference colors using `var(--color-name)` syntax for consistency and maintainability.
+- When using Material UI, use CSS variables in the `sx` prop: `backgroundColor: 'var(--color-primary)'`.
 - Keep styling concerns separate from component logic where possible.
+- Follow the naming convention: `--color-[category]-[variant]` (e.g., `--color-priority-p1`).
 
 ## Code Reviews
 

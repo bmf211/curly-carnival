@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Paper, Typography, Box } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
-import { colors } from './theme';
 
 function TaskForm({ onSave, initialTask }) {
   const [title, setTitle] = useState(initialTask?.title || '');
@@ -172,20 +171,20 @@ function TaskForm({ onSave, initialTask }) {
                   textTransform: 'none',
                   fontWeight: 600,
                   ...(priority === p ? {
-                    backgroundColor: colors.prioritySelector.selected,
-                    color: colors.black,
-                    borderColor: colors.prioritySelector.selected,
+                    backgroundColor: 'var(--color-priority-selected)',
+                    color: 'var(--color-black)',
+                    borderColor: 'var(--color-priority-selected)',
                     '&:hover': {
-                      backgroundColor: colors.prioritySelector.selectedHover,
-                      borderColor: colors.prioritySelector.selectedHover,
+                      backgroundColor: 'var(--color-priority-selected-hover)',
+                      borderColor: 'var(--color-priority-selected-hover)',
                     }
                   } : {
-                    backgroundColor: colors.prioritySelector.unselected,
-                    color: colors.white,
-                    borderColor: colors.prioritySelector.unselected,
+                    backgroundColor: 'var(--color-priority-unselected)',
+                    color: 'var(--color-white)',
+                    borderColor: 'var(--color-priority-unselected)',
                     '&:hover': {
-                      backgroundColor: colors.prioritySelector.unselectedHover,
-                      borderColor: colors.prioritySelector.unselectedHover,
+                      backgroundColor: 'var(--color-priority-unselected-hover)',
+                      borderColor: 'var(--color-priority-unselected-hover)',
                     }
                   })
                 }}

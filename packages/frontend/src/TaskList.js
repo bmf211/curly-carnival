@@ -5,12 +5,21 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import EventIcon from '@mui/icons-material/Event';
-import { colors } from './theme';
 
 function TaskList({ onEdit }) {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Helper function to get priority color from CSS variables
+  const getPriorityColor = (priority) => {
+    const colorMap = {
+      P1: 'var(--color-priority-p1)',
+      P2: 'var(--color-priority-p2)',
+      P3: 'var(--color-priority-p3)',
+    };
+    return colorMap[priority] || 'var(--color-priority-p3)';
+  };
 
   useEffect(() => {
     fetchTasks();
@@ -212,8 +221,8 @@ function TaskList({ onEdit }) {
                     height: 20,
                     fontSize: '0.7rem',
                     fontWeight: 600,
-                    backgroundColor: colors.priority[task.priority] || colors.priority.P3,
-                    color: colors.white,
+                    backgroundColor: getPriorityColor(task.priority),
+                    color: 'var(--color-white)',
                   }}
                 />
               )}
